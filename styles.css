@@ -570,3 +570,74 @@ body {
   font-size: 16px;
   cursor: pointer;
 }
+
+/* 📱 МОБИЛЬНАЯ АДАПТАЦИЯ */
+max-width: 768px {
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  /* 🔘 кнопки городов */
+  .city-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .city-chip {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  /* 🌡 текущая погода */
+  .current-card {
+    padding: 16px;
+  }
+
+  .current-temp {
+    font-size: 36px;
+  }
+
+  /* ⏰ почасовой прогноз */
+  .hourly-forecast {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .hour-card {
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  /* 📅 недельный прогноз */
+  .forecast-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 колонка */
+    gap: 10px;
+  }
+
+  .day-card {
+    padding: 12px;
+  }
+
+  /* 🐱 иконки */
+  .icon-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* 🎵 музыка */
+  .music-player {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px;
+  }
+}
