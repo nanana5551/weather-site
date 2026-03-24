@@ -551,6 +551,12 @@ body {
   line-height: 1.88;
   position: relative;
   font-display: swap;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    .pencil{
+      font-size: 12px;
+  }
 }
 
 .music-player {
@@ -573,54 +579,35 @@ body {
 
 @meida (max-width: 768px) {
 
-  /* 🔥 ГЛАВНОЕ — ПРАВИЛЬНЫЙ КЛАСС */
+  /* 🔥 ВОТ КЛЮЧ */
+  .overview {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
   .grid {
-    display: grid !important;
     grid-template-columns: 1fr !important;
   }
 
-  /* 📦 контейнер */
-  .app-shell {
+  /* карточки */
+  .current-card,
+  .hourly-card {
     width: 100%;
-    margin: 10px;
   }
 
-  /* 🧱 герой */
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* 🔍 поиск */
-  .search-form {
-    grid-template-columns: 1fr;
-  }
-
-  /* 📊 метрики */
-  .metrics {
-    grid-template-columns: 1fr;
-  }
-
-  /* 📅 НЕДЕЛЯ — КЛЮЧ */
+  /* неделя */
   .forecast-grid {
     grid-template-columns: 1fr !important;
   }
 
-  /* ⏰ часы */
+  /* часы */
   .hourly-strip {
     display: flex !important;
     overflow-x: auto;
-    gap: 10px;
   }
 
   .hour-card {
     min-width: 80px;
-  }
-
-  /* 🐱 иконки */
-  .icon-img {
-    width: 40px;
-    height: 40px;
   }
 
 }
