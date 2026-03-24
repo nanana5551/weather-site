@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Погодный сайт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-blobs">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <div class="particles" id="particles"></div>
+
+  <main class="app-shell">
+    <header class="hero glass">
+      <div>
+        <p class="eyebrow">Смотреть погоду онлайн</p>
+        <h1>Прогноз погоды</h1>
+        <p class="subtitle">Текущая погода, 7-дневный прогноз и быстрый выбор городов России.</p>
+      </div>
+      <div class="live-badge">
+        <span class="pulse"></span>
+        Онлайн
+      </div>
+    </header>
+
+    <section class="controls glass">
+      <form id="weatherForm" class="search-form">
+        <input id="cityInput" type="text" placeholder="Введите город" autocomplete="off" />
+        <button type="submit">Показать прогноз</button>
+      </form>
+
+      <div class="city-list" id="cityList">
+        <button class="city-chip active" data-city="Москва">Москва</button>
+        <button class="city-chip" data-city="Санкт-Петербург">Санкт-Петербург</button>
+        <button class="city-chip" data-city="Краснодар">Краснодар</button>
+        <button class="city-chip" data-city="Новосибирск">Новосибирск</button>
+        <button class="city-chip" data-city="Екатеринбург">Екатеринбург</button>
+        <button class="city-chip" data-city="Казань">Казань</button>
+      </div>
+    </section>
+
+    <section class="status" id="status"></section>
+
+    <section class="overview grid">
+      <article class="current-card glass card fade-up" id="currentCard">
+        <div class="card-head">
+          <div>
+            <p class="label">Сейчас</p>
+            <h2 id="cityName">Москва</h2>
+            <p id="currentDate">Загрузка...</p>
+          </div>
+          <div class="weather-icon-wrap" id="weatherIconWrap">
+            <div class="sun-moon"></div>
+          </div>
+        </div>
+
+        <div class="temp-block">
+          <span id="currentTemp">--°</span>
+          <p id="currentDesc">Подготовка данных...</p>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <span>💨 Ветер</span>
+            <strong id="windSpeed">-- км/ч</strong>
+          </div>
+          <div class="metric">
+            <span>💧 Влажность</span>
+            <strong id="humidity">--%</strong>
+          </div>
+          <div class="metric">
+            <span>🌡️ Ощущается</span>
+            <strong id="feelsLike">--°</strong>
+          </div>
+          <div class="metric">
+            <span>🌧️ Осадки</span>
+            <strong id="precipitation">-- мм</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="hourly-card glass card fade-up delay-1">
+        <div class="card-head small-gap">
+          <div>
+            <p class="label">Ближайшие часы</p>
+            <h3>Почасовой прогноз</h3>
+          </div>
+        </div>
+        <div class="hourly-strip" id="hourlyForecast"></div>
+      </article>
+    </section>
+
+    <section class="forecast glass card fade-up delay-2">
+      <div class="card-head small-gap">
+        <div>
+          <p class="label">7 дней</p>
+          <h3>Недельный прогноз</h3>
+        </div>
+      </div>
+      <div class="forecast-grid" id="forecastGrid"></div>
+    </section>
+  </main>
+  <div class="pencil">
+    <h1>Самуил Маршак</h1>
+<h1></h1>Усатый-полосатый
+<br><br>
+<h1></h1>Жила-была девочка. Как ее звали?
+<h1></h1>Кто звал,
+<h1></h1>Тот и знал.
+<h1></h1>А вы не знаете.
+<br><br>
+<h1></h1>Сколько ей было лет?
+<h1></h1>Сколько зим,
+<h1></h1>Столько лет, —
+<h1></h1>Сорока еще нет.
+<h1></h1>А всего четыре года.
+<br><br>
+<h1></h1>И был у нее… Кто у нее был?
+<h1></h1>Серый,
+<h1></h1>Усатый,
+<h1></h1>Весь полосатый.
+<h1></h1>Кто это такой? Котенок.
+<br><br>
+<h1></h1>Стала девочка котенка спать укладывать.
+<br><br>
+<h1></h1>— Вот тебе под спинку
+<h1></h1>Мягкую перинку.
+<br><br>
+<h1></h1>Сверху на перинку
+<h1></h1>Чистую простынку.
+<br><br>
+<h1></h1>от тебе под ушки
+<h1></h1>Белые подушки.
+<br><br>
+<h1></h1>Одеяльце на пуху
+<h1></h1>И платочек наверху.
+<br><br>
+<h1></h1>Уложила котенка, а сама пошла ужинать.
+<br><br>
+<h1></h1>Приходит назад, — что такое?
+<br><br>
+<h1></h1>Хвостик — на подушке,
+<h1></h1>На простынке — ушки.
+<br><br>
+<h1></h1>Разве так спят? Перевернула она котенка, уложила, как надо:
+<br><br>
+<h1></h1>Под спинку —
+<h1></h1>Перинку.
+<br><br>
+<h1></h1>На перинку —
+<h1></h1>Простынку.
+<br><br>
+<h1></h1>Под ушки —
+<h1></h1>Подушки.
+<br><br>
+<h1></h1>А сама пошла ужинать. Приходит опять, — что такое?
+<br><br>
+<h1></h1>Ни перинки,
+<h1></h1>Ни простынки,
+<h1></h1>Ни подушки
+<h1></h1>Не видать,
+<h1></h1>А усатый,
+<h1></h1>Полосатый
+<h1></h1>Перебрался
+<h1></h1>Под кровать.
+<br><br>
+<h1></h1>Разве так спят? Вот какой глупый котенок!
+<br><br>
+<h1></h1>Захотела девочка котенка выкупать.
+<br><br>
+<h1></h1>Принесла
+<h1></h1>Кусочек
+<h1></h1>Мыла,
+<h1></h1>И мочалку
+<h1></h1>Раздобыла,
+<h1></h1>И водицы
+<h1></h1>Из котла
+<h1></h1>В чайной
+<h1></h1>Чашке
+<h1></h1>Принесла.
+<br><br>
+<h1></h1>Не хотел котенок мыться —
+<h1></h1>Опрокинул он корытце
+<h1></h1>И в углу за сундуком
+<h1></h1>Моет лапку языком.
+<br><br>
+<h1></h1>Вот какой глупый котенок!
+<br><br>
+<h1></h1>Стала девочка учить котенка говорить:
+<br><br>
+<h1></h1>— Котик, скажи: мя-чик.
+<h1></h1>А он говорит: мяу!
+<br><br>
+<h1></h1>— Скажи: ло-шадь.
+<h1></h1>А он говорит: мяу!
+<br><br>
+<h1></h1>— Скажи: э-лек-три-че-ство.
+<h1></h1>А он говорит: мяу-мяу!
+<br><br>
+<h1></h1>Все «мяу» да «мяу»! Вот какой глупый котенок!
+<br><br>
+<h1></h1>Стала девочка котенка кормить.
+<br><br>
+<h1></h1>Принесла овсяной кашки —
+<h1></h1>Отвернулся он от чашки.
+<br><br>
+<h1></h1>Принесла ему редиски —
+<h1></h1>Отвернулся он от миски.
+<br><br>
+<h1></h1>Принесла кусочек сала.
+<h1></h1>Говорит котенок: — Мало!
+<br><br>
+<h1></h1>Вот какой глупый котенок!
+<br><br>
+<h1></h1>Не было в доме мышей, а было много карандашей. Лежали они на столе у
+<h1></h1>папы и попали котенку в лапы. Как помчался он вприпрыжку, карандаш поймал, как мышку,
+<br><br>
+<h1></h1>И давай его катать —
+<h1></h1>Из-под стула под кровать,
+<h1></h1>От стола до табурета,
+<h1></h1>От комода до буфета.
+<h1></h1>Подтолкнет — и цап-царап!
+<h1></h1>А потом загнал под шкап.
+<br><br>
+<h1></h1>Ждет на коврике у шкапа,
+<h1></h1>Притаился, чуть дыша…
+<h1></h1>Коротка кошачья лапа —
+<h1></h1>Не достать карандаша!
+<br><br>
+<h1></h1>Вот какой глупый котенок!
+<h1></h1>Закутала девочка котенка в платок и пошла с ним в сад.
+<h1></h1>Люди спрашивают: — Кто это у вас?
+<h1></h1>А девочка говорит: — Это моя дочка.
+<h1></h1>Люди спрашивают: — Почему у вашей дочки серые щечки?
+<h1></h1>А девочка говорит: — Она давно не мылась.
+<h1></h1>Люди спрашивают: — Почему у нее мохнатые лапы, а усы, как у папы?
+<h1></h1>Девочка говорит: — Она давно не брилась.
+<h1></h1>А котенок как выскочит, как побежит, — все и увидели, что это котенок —
+<h1></h1>усатый, полосатый.
+<h1></h1>Вот какой глупый котенок!
+<br><br>
+<h1></h1>А потом,
+<h1></h1>А потом
+<h1></h1>Стал он умным котом,
+<br><br>
+<h1></h1>А девочка тоже выросла, стала еще умнее и учится в первом классе сто первой школы.
+<h1></h1>
+  </div>
+
+<div class="music-player">
+  <button id="musicBtn">▶️ Музыка</button>
+  <audio id="bgMusic" loop>
+    <source src="music/relax.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
