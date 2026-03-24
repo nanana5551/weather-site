@@ -571,75 +571,56 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@meida (max-width: 768px) {
 
-  /* 📦 основной контейнер */
-  .container {
-    padding: 10px;
+  /* 🔥 ГЛАВНОЕ — ПРАВИЛЬНЫЙ КЛАСС */
+  .grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
   }
 
-  /* 🧱 ВСЕ карточки — в колонку */
-  .main-grid,
-  .content,
-  .dashboard {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px;
-  }
-
-  /* 🌡 текущая погода */
-  .current-card {
+  /* 📦 контейнер */
+  .app-shell {
     width: 100%;
-    padding: 16px;
+    margin: 10px;
   }
 
-  /* 🔢 температура */
-  .current-temp {
-    font-size: 42px;
+  /* 🧱 герой */
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  /* 📊 блоки (ветер, влажность и т.д.) */
-  .details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  /* 🔍 поиск */
+  .search-form {
+    grid-template-columns: 1fr;
   }
 
-  /* ⏰ почасовой прогноз */
-  .hourly-forecast {
-    display: flex;
+  /* 📊 метрики */
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  /* 📅 НЕДЕЛЯ — КЛЮЧ */
+  .forecast-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ⏰ часы */
+  .hourly-strip {
+    display: flex !important;
     overflow-x: auto;
     gap: 10px;
   }
 
   .hour-card {
-    min-width: 90px;
-    flex-shrink: 0;
-  }
-
-  /* 📅 НЕДЕЛЯ — ВАЖНО */
-  .forecast-grid {
-    display: grid;
-    grid-template-columns: 1fr !important;
-    gap: 10px;
-  }
-
-  .day-card {
-    width: 100%;
+    min-width: 80px;
   }
 
   /* 🐱 иконки */
   .icon-img {
     width: 40px;
     height: 40px;
-  }
-
-  /* 🔘 кнопки городов */
-  .city-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    justify-content: center;
   }
 
 }
