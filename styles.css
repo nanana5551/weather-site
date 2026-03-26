@@ -575,3 +575,18 @@ padding: 0 10px;
 }
 
 }
+/* 🔥 фикс контейнера иконки */
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  overflow: hidden;
+}
+
+/* 🔥 фикс картинки */
+.icon img {
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: contain;
+}
