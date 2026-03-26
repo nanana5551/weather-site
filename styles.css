@@ -521,93 +521,57 @@ body {
   50% { transform: translateY(-3px); }
 }
 
-@media (max-width: 980px) {
-  .grid { grid-template-columns: 1fr; }
-  .forecast-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 768px) {
+
+/* 🔥 УБИРАЕМ ДВЕ КОЛОНКИ */
+.overview.grid {
+display: flex !important;
+flex-direction: column !important;
+gap: 12px;
 }
 
-@media (max-width: 700px) {
-  .app-shell { width: min(100% - 20px, 1000px); }
-  .hero {
-    padding: 22px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .search-form { grid-template-columns: 1fr; }
-  .forecast-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .metrics { grid-template-columns: 1fr; }
-  .weather-icon-wrap { width: 84px; height: 84px; }
+/* 📦 карточки не выходят */
+.current-card,
+.hourly-card,
+.forecast {
+width: 100%;
+max-width: 100%;
 }
 
-.icon-img{
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+/* 📊 блоки внутри */
+.metrics {
+grid-template-columns: 1fr;
 }
 
-.pencil{
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.88;
-  position: relative;
-  font-display: swap;
-  padding: 20px;
-
-  @media (max-width: 768px) {
-    .pencil{
-      font-size: 12px;
-  }
+/* ⏰ ГЛАВНОЕ — часы */
+.hourly-strip {
+display: flex !important;
+overflow-x: auto;
+gap: 10px;
+padding-bottom: 10px;
 }
 
-.music-player {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  padding: 10px 15px;
-  border-radius: 12px;
+.hour-card {
+min-width: 80px; /* 🔥 фикс ширины */
+flex-shrink: 0;
 }
 
-.music-player button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+/* 📅 неделя */
+.forecast-grid {
+grid-template-columns: 1fr !important;
 }
 
-@meida (max-width: 768px) {
+/* 🐱 иконки */
+.icon-img {
+width: 40px;
+height: 40px;
+}
 
-  /* 🔥 ВОТ КЛЮЧ */
-  .overview {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* карточки */
-  .current-card,
-  .hourly-card {
-    width: 100%;
-  }
-
-  /* неделя */
-  .forecast-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* часы */
-  .hourly-strip {
-    display: flex !important;
-    overflow-x: auto;
-  }
-
-  .hour-card {
-    min-width: 80px;
-  }
+/* 📦 контейнер */
+.app-shell {
+width: 100%;
+max-width: 1200px;
+padding: 0 10px;
+}
 
 }
